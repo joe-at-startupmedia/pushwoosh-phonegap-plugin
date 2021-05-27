@@ -176,6 +176,28 @@ PushNotification.prototype.getPushwooshHWID = function(success) {
 	exec(success, null, "PushNotification", "getPushwooshHWID", []);
 };
 
+//Function: startLocationTracking
+//[android, ios, wp8, windows] Starts geolocation based push notifications. You need to configure Geozones in Pushwoosh Control panel.
+//
+//Parameters:
+// "success" - success callback
+// "fail" - error callback
+//
+PushNotification.prototype.startLocationTracking = function(success, fail) {
+    exec(success, fail, "PushNotification", "startLocationTracking", []);
+};
+
+//Function: stopLocationTracking
+//[android, ios, wp8, windows] Stops geolocation based push notifications
+//
+//Parameters:
+// "success" - success callback
+// "fail" - error callback
+//
+PushNotification.prototype.stopLocationTracking = function(success, fail) {
+    exec(success, fail, "PushNotification", "stopLocationTracking", []);
+};
+
 //Function: getRemoteNotificationStatus
 //[android, ios] Returns a detailed status of push notification permissions.
 //

@@ -40,6 +40,7 @@ import com.pushwoosh.notification.VibrateType;
 import com.pushwoosh.tags.Tags;
 import com.pushwoosh.tags.TagsBundle;
 
+import com.pushwoosh.location.PushwooshLocation;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
@@ -275,6 +276,19 @@ public class PushNotifications extends CordovaPlugin {
 	@CordovaMethod
 	private boolean getPushwooshHWID(JSONArray data, final CallbackContext callbackContext) {
 		callbackContext.success(Pushwoosh.getInstance().getHwid());
+		return true;
+	}
+
+	@CordovaMethod
+	private boolean startLocationTracking(JSONArray data, final CallbackContext callbackContext) {
+		PushwooshLocation.startLocationTracking();
+		return true;
+	}
+
+	@CordovaMethod
+	private boolean stopLocationTracking(JSONArray data, final CallbackContext callbackContext)
+	{
+		PushwooshLocation.stopLocationTracking();
 		return true;
 	}
 
